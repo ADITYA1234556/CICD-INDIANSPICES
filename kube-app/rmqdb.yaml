@@ -20,12 +20,11 @@ spec:
         ports:
         - containerPort: 15672
           name: vpromq01-port
-    env: 
-    - name: RABBITMQ_DEFAULT_USER
-      value: "guest"
-    - name: RABBITMQ_DEFAULT_PASS
-      valueFrom:
-        secretKeyRef:
-          name: app-secret
-          key: rabbitmqpass
-
+        env: 
+        - name: RABBITMQ_DEFAULT_USER
+          value: "guest"
+        - name: RABBITMQ_DEFAULT_PASS
+          valueFrom:
+            secretKeyRef:
+              name: app-secret
+              key: rabbitmqpass
